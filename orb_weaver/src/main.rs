@@ -36,7 +36,6 @@ async fn main() -> Result<(), anyhow::Error> {
             println!("{}", name);
         }
     } else if let Some(matches) = cli.subcommand_matches("run") {
-        // we can safely unwrap as the argument is required
         let spider_name = matches.value_of("spider").unwrap();
         let crawler = Crawler::new(Duration::from_millis(200), 2, 500);
 
